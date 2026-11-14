@@ -1,0 +1,9 @@
+## Delegating by difficulty
+- Orchestrator plans, decides, reviews, verifies, commits. Implementers only write code.
+- Protected paths (never delegate): <schema/migrations, shared packages, auth, .claude/, .delegate/, docs>.
+- If the plan assigns lanes, dispatch them in order. Never skip a lane; record the real result.json status.
+- Before dispatch: clean `git status`, `BASE=$(git rev-parse HEAD)`. One run at a time, in background.
+- Every brief states: no commit/push/install, forbidden paths, gates to run.
+- After run: read result.json -> run diff check against $BASE -> read full diff -> fix via delta brief (--session).
+- Never report subagent/implementer output as verified. Re-run gates once on the final diff.
+- Two failed runs on a subtask -> next lane, then orchestrator.

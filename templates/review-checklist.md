@@ -1,0 +1,6 @@
+- [ ] result.json status ok; touchedFiles match the brief
+- [ ] Diff check against BASE passes (HEAD unmoved, no forbidden paths)
+- [ ] Read full diff: no scope creep, nothing missing
+- [ ] Gates re-run by orchestrator on final diff
+- [ ] Docs/status synced by orchestrator
+- [ ] Commit made by orchestrator
